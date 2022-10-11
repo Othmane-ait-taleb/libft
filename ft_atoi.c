@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 16:35:13 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/10 19:37:10 by otait-ta         ###   ########.fr       */
+/*   Created: 2022/10/10 20:28:58 by otait-ta          #+#    #+#             */
+/*   Updated: 2022/10/10 20:32:42 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	int len;
-	unsigned int i;
 
-	i = 0;
-	len = 0;
-	while (src[len])
-		len++;
-	while (i < dstsize - 1 && dstsize != 0 && src[i] != '\0')
-	{
-        printf("%zu",dstsize);
-		dst[i] = src[i];
-		i++;
-	}
-    //check if we copier smthing or not if Not we let dest as he is 
-    if (i >= 1)
-        dst[i] = '\0';
-	return (len);
+
+#include "libft.h"
+
+int ft_atoi(const char *str)
+{
+    int i;
+    int sign;
+    int __rtr;
+
+    __rtr = 0;
+    sign = 1;
+    i = 0;
+   while (str[i] <= 32 )
+        i++;
+    if (str[i] == '-')
+    {
+         sign *= -1;
+         i++;
+    }
+    else if (str[i] == '+')
+        i++;
+    while (ft_isdigit(str[i]))
+    {
+        __rtr *= 10;
+        __rtr += str[i] - '0';
+        i++;
+    }
+    return (__rtr * sign);
 }

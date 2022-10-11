@@ -6,12 +6,12 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:32:04 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/09 21:41:07 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:37:04 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	int slen;
 	int dlen;
