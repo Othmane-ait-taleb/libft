@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:31:59 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/11 09:46:34 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/11 10:02:53 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_bzero(void *b, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*((unsigned char *)b + i) = '0';
+		*((unsigned char *)b + i) = 0;
 		i++;
 	}
 }

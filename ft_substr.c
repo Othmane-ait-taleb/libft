@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 09:45:09 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/11 10:09:17 by otait-ta         ###   ########.fr       */
+/*   Created: 2022/10/11 11:58:00 by otait-ta          #+#    #+#             */
+/*   Updated: 2022/10/12 18:11:56 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_calloc(size_t count, size_t size)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    void *p;
+    char *__substr;
+    int i;
+    int size;
 
-    p = malloc(count * sizeof(size));
-    if (p)
+    i = 0;
+    size = len + 1;
+    __substr = malloc((size) * sizeof(char));
+    if (!__substr)
+        return (NULL);
+    while (i < len)
     {
-        ft_bzero(p,count * size);
-        return (p);
+        __substr[i++] = s[start++];
     }
-    return (p);
-}
-
-int main()
-{
-    int *p;
-
-    p = calloc(2,sizeof(int));
-    printf("%d",p[100]);
+    __substr[i] = '\0';
+    return (__substr);
 }
