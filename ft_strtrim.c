@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:26:34 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/13 14:20:04 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:12:49 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static  int ft_end(char const *s1, char const *set)
     i = 0;
     e = ft_strlen(s1) - 1;
     __rtr = (char *)s1;
-    while (e >= 0)
+    while (e > 0)
     {
         while (set[i])
         {
@@ -81,3 +81,8 @@ __rtr = ft_substr(s1,s,len);
 
     return __rtr;
 }
+// int main(int argc, char const *argv[])
+// {
+//     printf("%s",ft_strtrim("   u   "," "));
+//     return 0;
+// }

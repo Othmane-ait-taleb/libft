@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:55:46 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/11 20:55:32 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:00:21 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ char *ft_strjoin(char const *s1, char const *s2)
 
 int main()
 {
-    printf("%s",ft_strjoin(NULL,"l"));    
+    printf("%s",ft_strjoin("l","a"));    
 }

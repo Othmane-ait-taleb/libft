@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:32:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/13 16:35:01 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:13:10 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ static char *word_by_word(char *s, char c, int *start)
         i++;
     end = i;
     rtr = ft_substr(s,*start,end - *start);
+    if(rtr == NULL)
+        free(rtr);
     *start = end;
     return rtr;
 }
@@ -49,7 +51,6 @@ char **ft_split(char const *s, char c)
 {
     char *trim;
     char **rtr;
-    char *word;
     int i;    
     int start;
     
@@ -63,7 +64,7 @@ char **ft_split(char const *s, char c)
         if (*(rtr + i) == NULL)
         {
             free(rtr);
-            break;
+            return (NULL);
         }
         i++;
     }
@@ -76,7 +77,7 @@ int main()
     int s = 0;
     char trim[100] = "ui dsf dgodf";
     int start = 0;
-    char **split = ft_split("   oui    khouya no ",' ');
+    char **split = ft_split("i eeridfggifghfghi",'i');
     for (size_t i = 0; split[i]; i++)
     {
         printf("%s\n",split[i]);
