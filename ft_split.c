@@ -6,49 +6,80 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:32:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/12 20:52:08 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 16:35:01 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_locate(char const *s, char c, int *start, int *end)
+static int word_count(char *s, char c)
 {
     int i;
-
-    i = *start;
-    while (s[i] && s[i] != c)
-        i++;
-    if (i < ft_strlen(s))
-     *start = i;
-    while (s[i] && s[i] == c)
-        i++;
-    while (s[i] && s[i] != c)
-        i++;
-    while (s[i] && s[i] == c)
+    int count;
+    
+    i = 0;
+    count = 0;
+    while (s[i])
     {
+        if(s[i] == c && s[i - 1] != c)
+            count++;
         i++;
-    *end = i ;
     }
+    return count + 1;
 }
 
-char ft_split(char const *s, char c)
+static char *word_by_word(char *s, char c, int *start)
 {
-    int start;
+    int i;
     int end;
-    
-    end = 0;
-    start = 0;
-    while (end < ft_strlen(s))
-    {
-        
-    ft_locate(s,c,&start, &end);
-    printf("%d %d ",start,end);
-    start = end + 1;
-    
-    }
+    char *rtr;
+    i = *start;
+    while (s[i] && s[i] == c)
+        i++;
+    *start = i;
+    while (s[i] && s[i] != c)
+        i++;
+    end = i;
+    rtr = ft_substr(s,*start,end - *start);
+    *start = end;
+    return rtr;
 }
-int main(int argc, char const *argv[])
+
+char **ft_split(char const *s, char c)
 {
+    char *trim;
+    char **rtr;
+    char *word;
+    int i;    
+    int start;
+    
+    i = 0;
+    start = 0;
+    trim = ft_strtrim(s, &c);
+    rtr = (char **)malloc((word_count(trim,c) + 1) * sizeof(char *));
+    while (start < ft_strlen(trim))
+    {
+        *(rtr + i) = word_by_word(trim,c,&start);
+        if (*(rtr + i) == NULL)
+        {
+            free(rtr);
+            break;
+        }
+        i++;
+    }
+    *(rtr + i) = 0;
+    free(trim);
+    return (rtr);
+}
+int main()
+{
+    int s = 0;
+    char trim[100] = "ui dsf dgodf";
+    int start = 0;
+    char **split = ft_split("   oui    khouya no ",' ');
+    for (size_t i = 0; split[i]; i++)
+    {
+        printf("%s\n",split[i]);
+    }
     
 }

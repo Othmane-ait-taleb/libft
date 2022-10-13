@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:28:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/12 18:08:33 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:29:43 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_strlen(const char *s);
 int	ft_isdigit(int n);
 void	ft_bzero(void *b, size_t n);
 char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strtrim(char const *s1, char const *set);
+char *ft_strchr(const char *s, int c);
 
 # endif

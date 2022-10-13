@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:26:34 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/12 18:31:20 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 14:20:04 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static  int ft_end(char const *s1, char const *set)
                 i++;
         }
         if ( i == ft_strlen(set))
-            break;       
+            break;
     }
     return e;
 }

@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 21:56:52 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/09 22:44:29 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:32:12 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,4 @@ char *ft_strchr(const char *s, int c)
     while (*s2 != c)
     s2++;
     return (s2);
-}
-int main()
-{
-    printf("%s",ft_strchr("ouoi",'u'));
 }
