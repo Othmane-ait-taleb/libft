@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:28:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/13 13:29:43 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/14 04:42:27 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	ft_bzero(void *b, size_t n);
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strtrim(char const *s1, char const *set);
 char *ft_strchr(const char *s, int c);
-
+void	ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
 # endif
