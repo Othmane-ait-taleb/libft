@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:28:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/14 04:42:27 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:06:18 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 # include <unistd.h>
 # include <stdlib.h>
 // dont forg to remove printf and this
