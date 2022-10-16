@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 15:11:30 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/14 15:44:01 by otait-ta         ###   ########.fr       */
+/*   Created: 2022/10/15 21:19:45 by otait-ta          #+#    #+#             */
+/*   Updated: 2022/10/16 15:54:10 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-t_list *ft_lstnew(void *content)
-{
-    t_list *rtr;
 
-    rtr = malloc(sizeof(t_list));
-    if (!rtr)
-        return (NULL);
-    rtr->content = content;
-    rtr->next = NULL;
-    return (rtr);
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list *p;
+
+	p = lst;
+	while (p->next)
+	{
+		p = p->next;
+	}
+	return (p);
 }
+
+// int main()
+// {
+//     t_list e1 ;
+//     t_list e2;
+//     t_list e3;
+    
+//     e1.next = &e2;
+//     e2.next = &e3;
+//     e3.next = NULL;
+
+//     printf("%p", e2.next);
+//     printf("%p", ft_lstlast(&e1));
+// }

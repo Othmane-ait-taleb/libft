@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:28:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/14 15:06:18 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/15 23:28:19 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ char *ft_strtrim(char const *s1, char const *set);
 char *ft_strchr(const char *s, int c);
 void	ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
+char **ft_split(char const *s, char c);
+t_list	*ft_lstlast(t_list *lst);
 # endif
