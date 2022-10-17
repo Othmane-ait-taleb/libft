@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 09:45:09 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/16 16:55:13 by otait-ta         ###   ########.fr       */
+/*   Created: 2022/10/16 19:06:55 by otait-ta          #+#    #+#             */
+/*   Updated: 2022/10/16 20:07:01 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_calloc(size_t count, size_t size)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    void *p;
+    t_list *p;
+    t_list *n_head;
+    void *new_content;
 
-    p = malloc(count * sizeof(size));
-    if (p)
+    p = lst;
+    n_head = malloc(sizeof(t_list));
+    if(!n_head)
+        return NULL;
+    n_head->content = f(lst->content);
+    n_head->next = lst->next;
+    
+    while (p->next)
     {
-        ft_bzero(p,count * size);
-        return (p);
+        new_content = f(p->content);
+        
+        
     }
-    return (p);
-}
-
-int main()
-{
-    int *p;
-
-    p = calloc(29454654,sizeof(int));
-    //printf("%d",p[100]);
 }
