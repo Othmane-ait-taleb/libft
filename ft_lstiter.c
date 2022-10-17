@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:33:30 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/16 16:43:09 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:47:10 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *p;
+	t_list	*p;
 
 	p = lst;
 	while (p->next)

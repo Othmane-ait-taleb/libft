@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 04:51:59 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/14 05:12:35 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:47:52 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 	{
 		ft_putnbr_fd(n / 10, fd);
-        ft_putchar_fd('0' + (n % 10), fd);
-
+		ft_putchar_fd('0' + (n % 10), fd);
 	}
 }

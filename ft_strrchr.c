@@ -6,12 +6,12 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 22:23:05 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/10 12:43:54 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:01:32 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
@@ -29,11 +29,12 @@ char	*ft_strrchr(const char *s, int c)
 		return (s2 + i);
 	}
 	else
+	{
 		while (*s2++)
 		{
 			if (*s2 == c)
 				temp = s2;
 		}
+	}
 	return (temp);
 }
-

@@ -6,28 +6,21 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:45:09 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/16 16:55:13 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:45:39 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void *ft_calloc(size_t count, size_t size)
+
+void	*ft_calloc(size_t count, size_t size)
 {
-    void *p;
+	void	*p;
 
-    p = malloc(count * sizeof(size));
-    if (p)
-    {
-        ft_bzero(p,count * size);
-        return (p);
-    }
-    return (p);
-}
-
-int main()
-{
-    int *p;
-
-    p = calloc(29454654,sizeof(int));
-    //printf("%d",p[100]);
+	p = malloc(count * sizeof(size));
+	if (p)
+	{
+		ft_bzero(p, count * size);
+		return (p);
+	}
+	return (p);
 }

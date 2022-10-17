@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:15:09 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/10 11:52:58 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:47:38 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*__s1 == *__s2)
 		{
-            __s1++;
-            __s2++;
-            i++;
+			__s1++;
+			__s2++;
+			i++;
 			continue ;
 		}
-        else
-		return (*__s1 - *__s2);
+		else
+			return (*__s1 - *__s2);
 	}
-    return (0);
+	return (0);
 }

@@ -6,17 +6,16 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:31:59 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/11 10:02:53 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:44:02 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
 void	ft_bzero(void *b, size_t n)
 {
 	int	i;
-	
+
 	if (!b)
 		return ;
 	i = 0;

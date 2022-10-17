@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 00:35:59 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/14 02:37:30 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:01:17 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *rtr;
-	unsigned int i;
-	int len;
+	char			*rtr;
+	unsigned int	i;
+	int				len;
 
 	len = ft_strlen(s) + 1;
 	i = 0;
