@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 10:59:27 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:51:44 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:06:52 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
-	unsigned char	*s2;
+	size_t				i;
+	unsigned char		*s2;
 
 	i = 0;
 	s2 = ((unsigned char *)s);

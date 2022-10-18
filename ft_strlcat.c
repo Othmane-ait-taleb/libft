@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:32:04 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:54:55 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:35:36 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	slen;
-	int	dlen;
-	int	rtn;
-	int	i;
+	int		slen;
+	size_t	dlen;
+	int		rtn;
+	int		i;
 
 	i = 0;
 	slen = ft_strlen(src);

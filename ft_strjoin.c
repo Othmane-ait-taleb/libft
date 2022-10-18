@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 18:55:46 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:54:24 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 13:51:28 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		t_size;
-	char	*__rtr;
-	int		i;
+	int				t_size;
+	char			*__rtr;
+	int				i;
 
 	i = 0;
 	t_size = ft_strlen(s1) + ft_strlen(s2) + 1;

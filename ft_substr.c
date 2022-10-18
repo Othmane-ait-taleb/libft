@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:58:00 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:56:36 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:14:13 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*__substr;
-	int		i;
-	int		size;
+	char		*__substr;
+	size_t		i;
+	int			size;
 
 	i = 0;
 	size = len + 1;

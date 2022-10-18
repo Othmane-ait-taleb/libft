@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 00:35:59 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 12:01:17 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:27:44 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	int				len;
 
-	len = ft_strlen(s) + 1;
+	len = ft_strlen(s);
 	i = 0;
 	if (!s)
 		return (NULL);
-	rtr = malloc((len) * sizeof(char));
+	rtr = malloc((len + 1) * sizeof(char));
 	if (!rtr || !f)
 		return (NULL);
-	while (i < len)
+	while (i < (unsigned int)len)
 	{
 		rtr[i] = f(i, s[i]);
 		i++;

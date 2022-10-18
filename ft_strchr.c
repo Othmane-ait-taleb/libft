@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 21:56:52 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:53:10 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:34:57 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ char	*ft_strchr(const char *s, int c)
 		return (s2 + i);
 	}
 	else
-		while (*s2 != c)
+		while (*s2 != c && *s2)
 			s2++;
+	if (!*s2)
+		return (NULL);
 	return (s2);
 }

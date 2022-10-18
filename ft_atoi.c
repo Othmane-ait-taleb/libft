@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:28:58 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:43:43 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:25:42 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_atoi(const char *str)
 	__rtr = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] <= 32)
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' || str[i] == '\r'
+		|| str[i] == '\f' || str[i] == '\n')
 		i++;
 	if (str[i] == '-')
 	{

@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:32:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 11:47:58 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/17 17:59:06 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	word_count(char *s, char c)
 	return (count + 1);
 }
 
-static char	*word_by_word(char *s, char c, int *start)
+static char	*word_by_word(char *s, char c, size_t *start)
 {
 	int		i;
 	int		end;
@@ -50,10 +50,10 @@ static char	*word_by_word(char *s, char c, int *start)
 
 char	**ft_split(char const *s, char c)
 {
-	char	*trim;
-	char	**rtr;
-	int		i;
-	int		start;
+	char		*trim;
+	char		**rtr;
+	int			i;
+	size_t		start;
 
 	i = 0;
 	start = 0;
