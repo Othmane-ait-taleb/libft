@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:58:13 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/19 14:52:19 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:46:49 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	i = 0;
 	__rtr = NULL;
-	if (!haystack && len == 0)
+	if (!haystack && len == 0 )
 		return (NULL);
 	while (haystack[i] && i <= len)
 	{
