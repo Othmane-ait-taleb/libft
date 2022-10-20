@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 19:06:55 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 15:25:42 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:58:36 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,24 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*nd;
 	t_list	*n_list;
 
-	if (!lst)
-		return (NULL);
-	n_list = ft_lstnew(0);
-	while (lst)
+	n_list = NULL;
+	if (lst && f && del)
 	{
-		nd = ft_lstnew(f(lst->content));
-		if (!nd)
-		{
-			ft_lstclear(&n_list, del);
+		n_list = ft_lstnew(0);
+		if (!(n_list))
 			return (NULL);
+		n_list = 0;
+		while (lst)
+		{
+			nd = ft_lstnew(f(lst->content));
+			if (!nd)
+			{
+				ft_lstclear(&n_list, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&n_list, nd);
+			lst = lst->next;
 		}
-		ft_lstadd_back(&n_list, nd);
-		lst = lst->next;
 	}
 	return (n_list);
 }
@@ -68,7 +73,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // 	e4->next = NULL;
 //     int i = 0;
 // 	new = ft_lstmap(e1, &ft_ttoupper, &d);
-//     while (new->next)
+//     while (new)
 //     {
 //         printf("%s %d",(new)->content,i++ );
 //         new = new->next;

@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:09:58 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 18:06:10 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/18 21:17:06 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	char	*d;
+	char	*s;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
+	d = (char *)dst;
+	s = (char *)src;
+	if (!dst && !src)
+		return (0);
 	if (s > d)
-	{
 		ft_memcpy(d, s, len);
-	}
 	else
 	{
 		while (len > 0)

@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:32:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/17 17:59:06 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:17:18 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,33 @@ static char	*word_by_word(char *s, char c, size_t *start)
 	return (rtr);
 }
 
+static int	protection(char const *s, char **trim, char ***rtr, char c)
+{
+	if (!s)
+		return (0);
+	*trim = ft_strtrim(s, &c);
+	if (!(*trim))
+		return (0);
+	*rtr = (char **)malloc((word_count(*trim, c) + 1) * sizeof(char *));
+	if (!(*rtr))
+	{
+		free(*trim);
+		return (0);
+	}
+	return (1);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	char		*trim;
-	char		**rtr;
-	int			i;
-	size_t		start;
+	char	*trim;
+	char	**rtr;
+	int		i;
+	size_t	start;
 
 	i = 0;
 	start = 0;
-	trim = ft_strtrim(s, &c);
-	rtr = (char **)malloc((word_count(trim, c) + 1) * sizeof(char *));
+	if (!(protection(s, &trim, &rtr, c)))
+		return (NULL);
 	while (start < ft_strlen(trim))
 	{
 		*(rtr + i) = word_by_word(trim, c, &start);
@@ -73,12 +89,13 @@ char	**ft_split(char const *s, char c)
 	free(trim);
 	return (rtr);
 }
+
 // int main()
 // {
 //     int s = 0;
-//     char trim[100] = "ui dsf dgodf";
+//     char trim[100] = "      split       this for   me  !       ";
 //     int start = 0;
-//     char **split = ft_split("i eeridfggifghfghi",'i');
+//     char **split = ft_split(trim,' ');
 //     for (size_t i = 0; split[i]; i++)
 //     {
 //         printf("%s\n",split[i]);

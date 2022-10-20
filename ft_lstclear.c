@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 00:44:18 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 11:46:12 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:09:39 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	while ((*lst)->next)
+	if (lst && del)
 	{
-		temp = (*lst)->next;
+		while ((*lst)->next)
+		{
+			temp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			*lst = temp;
+		}
 		del((*lst)->content);
 		free(*lst);
-		*lst = temp;
+		*lst = NULL;
 	}
-	del((*lst)->content);
-	free(*lst);
-	lst = NULL;
 }
 
 // void	d(void *p)

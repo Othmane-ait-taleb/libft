@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:58:13 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 12:20:48 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:52:19 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	int		flag;
 	char	*__rtr;
 
-	flag = 0;
 	j = 0;
 	i = 0;
 	__rtr = NULL;
-	while (haystack[i] && i < len)
+	if (!haystack && len == 0)
+		return (NULL);
+	while (haystack[i] && i <= len)
 	{
 		if (__rtr)
 			return (__rtr);
@@ -40,3 +40,14 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (__rtr);
 }
+
+// int	main(void)
+// {
+// 	char *s1 = "oh no not the empty string !";
+// 	char *s2 = "the";
+// 	size_t max = 16;
+// 	//char *i1 = strnstr(s1, s2, max);
+// 	char *i2 = ft_strnstr(s1, s2, 13);
+// 	//printf("%s \n",i1);
+// 	printf("%s \n", i2);
+// }

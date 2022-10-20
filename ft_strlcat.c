@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 17:32:04 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 11:35:36 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:25:54 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	int		i;
 
 	i = 0;
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	slen = ft_strlen(src);
 	dlen = ft_strlen(dst);
 	rtn = dlen + slen;
@@ -36,4 +38,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[dlen] = '\0';
 	return (rtn);
+}
+int main()
+{
+	printf("%d",t_strlcat("rrrrrrrrrrrrrrr", "lorem ipsum dolor sit amet", 5));
 }

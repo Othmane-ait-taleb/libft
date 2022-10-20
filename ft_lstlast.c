@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 21:19:45 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 15:51:27 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:57:11 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*p;
 
+	if (!lst)
+		return (NULL);
 	p = lst;
 	while (p->next)
 		p = p->next;

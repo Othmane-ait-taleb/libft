@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:26:34 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 15:22:33 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:35:45 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*__rtr;
 	int		len;
 
+	if (!s1 || !set)
+		return (NULL);
 	e = ft_end(s1, set);
 	s = ft_start(s1, set);
 	len = e - s + 1;
