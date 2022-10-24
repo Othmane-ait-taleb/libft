@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/24 11:20:33 by otait-ta          #+#    #+#              #
+#    Updated: 2022/10/24 11:20:46 by otait-ta         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	=	libft.a
 HEADRS	=	libft.h
 AR		=	ar rc
-CC		=	GCC
-FLAGS	= 	-Wall -Werror -Wextra -I $(HEADRS)
+CC		=	CC
+FLAGS	= 	-Wall -Werror -Wextra 
 RM		=	rm -rf
 
 CFILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_strlen.c ft_toupper.c ft_tolower.c \
@@ -13,7 +25,7 @@ CFILES	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_strlen.c ft_toup
 	   		ft_putnbr_fd.c ft_strtrim.c ft_memcpy.c ft_memmove.c ft_memset.c \
 	   		ft_memcmp.c ft_memchr.c ft_bzero.c ft_calloc.c ft_striteri.c\
 
-BONUS_CFILES  = ft_lstnew.c ft_lstadd_front.c ft_striteri.c ft_lstsize.c ft_lstlast.c \
+BONUS_CFILES  = ft_lstnew.c ft_lstadd_front.c  ft_lstsize.c ft_lstlast.c \
 	   			ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstadd_back.c ft_lstdelone.c \
 
 OBJ = $(CFILES:.c=.o)
@@ -27,6 +39,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c $(HEADRS)
 	$(CC) $(FLAGS) -c $< -o $@
+
 clean: 
 		$(RM) $(OBJ) $(BONUS_OBJS)
 
@@ -35,7 +48,7 @@ fclean: clean
 
 re:	fclean all
 
-bonus: all $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
 		$(AR) $(NAME) $(BONUS_OBJS)
 
 .PHONY: all bonus clean fclean re

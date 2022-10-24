@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:52:36 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 21:11:02 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:30:42 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	if (!dst && !src)
 		return (0);
+	if (dst == src)
+		return (dst);
 	while (i < n)
 	{
 		*((char *)dst + i) = *((char *)src + i);
@@ -26,8 +28,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-// int main()
-// {
-// 	printf("%s",		ft_memcpy(((void *)0), ((void *)0), 3));
-// }

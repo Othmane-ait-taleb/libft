@@ -6,85 +6,30 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 19:26:34 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/19 14:35:45 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:26:56 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_start(char const *s1, char const *set)
-{
-	char	*__rtr;
-	size_t	i;
-	int		s;
-
-	i = 0;
-	s = 0;
-	__rtr = (char *)s1;
-	while (__rtr[s])
-	{
-		while (__rtr[s] && set[i])
-		{
-			if (__rtr[s] == set[i])
-			{
-				s++;
-				i = 0;
-			}
-			else
-				i++;
-		}
-		if (i == ft_strlen(set))
-			break ;
-	}
-	return (s);
-}
-
-static int	ft_end(char const *s1, char const *set)
-{
-	char	*__rtr;
-	size_t	i;
-	int		e;
-
-	i = 0;
-	e = ft_strlen(s1) - 1;
-	__rtr = (char *)s1;
-	while (e > 0)
-	{
-		while (set[i] && e > 0)
-		{
-			if (__rtr[e] == set[i])
-			{
-				e--;
-				i = 0;
-			}
-			else
-				i++;
-		}
-		if (i == ft_strlen(set))
-			break ;
-	}
-	return (e);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		s;
-	int		e;
-	char	*__rtr;
-	int		len;
+	size_t	start;
+	size_t	end;
+	char	*str;
 
-	if (!s1 || !set)
-		return (NULL);
-	e = ft_end(s1, set);
-	s = ft_start(s1, set);
-	len = e - s + 1;
-	if (len < 0)
-		return (ft_strdup(""));
-	__rtr = ft_substr(s1, s, len);
-	return (__rtr);
+	str = 0;
+	if (s1 && set)
+	{
+		start = 0;
+		end = ft_strlen(s1);
+		while (s1[start] && ft_strchr(set, s1[start]))
+			start++;
+		while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && end > start)
+			end--;
+		str = (char *)malloc(sizeof(char) * (end - start + 1));
+		if (str)
+			ft_strlcpy(str, s1 + start, end - start + 1);
+	}
+	return (str);
 }
-// int main(int argc, char const *argv[])
-// {
-//     printf("%s",ft_strtrim("      "," "));
-//     return (0);
-// }

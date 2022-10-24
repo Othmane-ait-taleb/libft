@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:32:17 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/20 14:40:59 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:00:58 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,15 +103,3 @@ char	**ft_split(char const *s, char c)
 	free(trim);
 	return (rtr);
 }
-// int main()
-// {
-//     int s = 0;
-//     char trim[100] = "      split       this for   me  !       ";
-//     int start = 0;
-//     char **split = ft_split(trim,' ');
-//     for (size_t i = 0; split[i]; i++)
-//     {
-//         printf("%s\n",split[i]);
-//     }
-
-// }

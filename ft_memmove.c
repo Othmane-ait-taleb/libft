@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:09:58 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/18 21:17:06 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:40:38 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	if (!dst && !src)
 		return (0);
-	if (s > d)
+	if (s >= d)
 		ft_memcpy(d, s, len);
 	else
 	{

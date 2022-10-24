@@ -6,7 +6,7 @@
 /*   By: otait-ta <otait-ta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:28:58 by otait-ta          #+#    #+#             */
-/*   Updated: 2022/10/20 14:41:08 by otait-ta         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:21:45 by otait-ta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,3 @@ int	ft_atoi(const char *str)
 	}
 	return (__rtr * sign);
 }
-// int	main(void)
-// {
-// 	printf("%d", atoi("  4294967295"));
-// }
